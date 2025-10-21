@@ -30,9 +30,8 @@ Install with pip:
 
 ```powershell
 git clone <url>
-# or install manually:
 cd image_clusterer
-# for hdbscan support:
+# install manually:
 pip install -e .
 ```
 
