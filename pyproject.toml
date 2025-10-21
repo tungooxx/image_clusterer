@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "image-clusterer"
+version = "0.1.0"
+description = "Image clustering with timm + UMAP using KMeans or HDBSCAN"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{name = "Chucky"}]
+dependencies = [
+  "torch",
+  "torchvision",
+  "timm",
+  "numpy",
+  "pandas",
+  "Pillow",
+  "umap-learn",
+  "scikit-learn",
+  "tqdm"
+]
+optional-dependencies.hdbscan = ["hdbscan>=0.8.38"]
+
+[project.scripts]
+image-clusterer = "image_clusterer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["image_clusterer*"]
